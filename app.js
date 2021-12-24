@@ -1,26 +1,27 @@
 const express = require('express');
-const app = express();
-const path = require('path');
+const cors = require('cors');
+
 const brandRouter = require('./routes/brandRouter');
 const fabricRouter = require('./routes/fabricRouter');
 const providerRouter = require('./routes/providerRouter');
 const shirtRouter = require('./routes/shirtRouter');
 const sizeRouter = require('./routes/sizeRouter');
-const cors = require('cors');
+const productRouter = require('./routes/productRouter');
 
+const app = express();
 app.use(express.json());
 app.use(cors());
-//d
-app.get('/', function (req, res) {
-    res.sendFile(path.resolve("FrontEnd", "index.html"));
-})
-app.use(express.static('FrontEnd'));
 
-app.use('/', brandRouter);
+app.use('/brand', brandRouter);
 app.use('/fabric', fabricRouter);
 app.use('/provider', providerRouter);
 app.use('/shirt', shirtRouter);
 app.use('/size', sizeRouter);
+app.use('/products', productRouter);
+
+app.get('/', function (req, res) {
+    res.send('hello world')
+})
 
 
 const port = process.env.PORT || 8000;

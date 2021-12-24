@@ -13,7 +13,7 @@ exports.getAllFabric = (async (req,res) => {
 
     res.status(200).json({
         status: 'success',
-        results: brands.length,
+        results: fabric.length,
         data: {
             fabric,
         },

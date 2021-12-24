@@ -1,0 +1,9 @@
+.formFiltersContainer {
+    display: flex;
+}
+
+button {
+    display: flex;
+    border-radius: 5px;
+    text-align: center;
+}

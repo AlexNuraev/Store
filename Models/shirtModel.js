@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const shirtScheme = mongoose.Schema({
+    id: {
+        type: String,
+        required: true
+    },
     color: {
         type: String,
         required: true["shirt must have a color"]

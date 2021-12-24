@@ -1,0 +1,11 @@
+
+.inputContainer {
+    padding: 10px;
+    border: 1px solid rgba(55, 25, 192, 0.8);
+    border-radius: 5px;
+    max-width: fit-content;
+    margin: 10px;
+}
+
+.inputInput { width: 200px; border: 1px solid rgba(37, 4, 182, 0.8); border-radius: 3px;}
+.inputLabel { padding-right: 5px; }

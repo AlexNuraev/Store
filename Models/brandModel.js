@@ -1,9 +1,12 @@
 const mongoose = require('mongoose');
 
-const brandScheme = mongoose.Schema ({
-    name : {
-        type : String , 
-        required : true ["Must enter brand name"]
+const brandScheme = mongoose.Schema({
+    id: {
+        type: String,
+    },
+    name: {
+        type: String,
+        required: true["Must enter brand name"]
     },
     // toJSON: { virtuals : true},
     // toObject: { virtuals : true},

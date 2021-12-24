@@ -1,15 +1,26 @@
 const mongoose = require('mongoose');
 
-const fabricScheme = mongoose.Schema ({
-    name : {
-        type : String ,
-        require : true ["Must enter fabric name"]
+const fabricScheme = mongoose.Schema({
+    id: {
+        type: String,
     },
-    color : {
-        type : String , 
-        require : true ["Must enter fabric color"]
-    }
-})
+    name: {
+        type: String,
+        require: true["Must enter fabric name"]
+    },
+    color: {
+        type: String,
+    },
+
+},
+    { timestamps: true }
+)
+
+fabricScheme.virtual('fabrics', {
+    ref: 'Fabric',
+    localField: '_id',
+    foreignField: 'Fabric',
+});
 
 const fabric = mongoose.model('Fabric', fabricScheme);
 
